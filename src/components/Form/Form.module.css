@@ -23,3 +23,7 @@
     -ms-transform: scale(0.95);
     transform: scale(0.95);
 }
+
+.form {
+    width: 260px;
+}

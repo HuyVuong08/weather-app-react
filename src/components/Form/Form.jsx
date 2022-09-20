@@ -15,7 +15,7 @@ const Form = ({ submitSearch, isLoading }) => {
     return (
         <>
             {!isLoading && (
-                <form onSubmit={onSubmit}>
+                <form onSubmit={onSubmit} className={styles.form}>
                     <input
                         aria-label="location"
                         type="text"
