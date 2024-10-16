@@ -20,7 +20,7 @@ const Form = ({ submitSearch, isLoading }) => {
                         aria-label="location"
                         type="text"
                         className={`${styles.input} form-control`}
-                        placeholder="Enter location, e.g. singapore"
+                        placeholder="San Fransisco"
                         required
                         value={location}
                         onChange={e => setLocation(e.target.value)}
