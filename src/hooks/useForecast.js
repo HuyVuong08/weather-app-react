@@ -5,9 +5,8 @@ import getCurrentDayForecast from '../helpers/getCurrentDayForecast';
 import getUpcomingDaysForecast from '../helpers/getUpcomingDaysForecast';
 
 const useForecast = () => {
-    const BASE_URL = 'http://api.openweathermap.org/';
-    const CROSS_DOMAIN = 'https://the-ultimate-api-challenge.herokuapp.com';
-    const REQUEST_URL = `${CROSS_DOMAIN}/${BASE_URL}`;
+    const BASE_URL = 'https://api.openweathermap.org';
+    const REQUEST_URL = `${BASE_URL}`;
     const API_KEY = '85dbbe2b9cff4e8b40524cdb7ec8884b';
 
     const [isError, setError] = useState(false);
@@ -15,17 +14,17 @@ const useForecast = () => {
     const [forecast, setForecast] = useState('');
 
     const getWoeid = async location => {
-        const { data } = await axios(`${REQUEST_URL}geo/1.0/direct`, { params: { q: location, appid: API_KEY } });
+        const { data } = await axios(`${REQUEST_URL}/data/2.5/weather`, { params: { q: location, appid: API_KEY } });
         if (!data || data.length === 0) {
             setError('There is no such location');
             setLoading(false);
             return;
         }
-        return data[0];
+        return data.coord;
     };
 
     const getForecastData = async woeid => {
-        const { data } = await axios(`${REQUEST_URL}data/2.5/forecast`, {
+        const { data } = await axios(`${REQUEST_URL}/data/2.5/forecast`, {
             params: { lat: woeid.lat, lon: woeid.lon, units: 'metric', appid: API_KEY },
         });
         if (!data || data.length === 0) {
