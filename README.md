@@ -69,4 +69,4 @@ npm start
 
 ### License
 
-[MIT](https://github.com/realstoman/react-tailwindcss-portfolio/blob/main/LICENSE)
+[MIT](https://github.com/HuyVuong08/shopping-cart-react.git)
