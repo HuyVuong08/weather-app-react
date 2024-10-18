@@ -3,11 +3,12 @@ import { useState } from 'react';
 import getCurrentDayDetailedForecast from '../helpers/getCurrentDayDetailedForecast';
 import getCurrentDayForecast from '../helpers/getCurrentDayForecast';
 import getUpcomingDaysForecast from '../helpers/getUpcomingDaysForecast';
+import { OPEN_WEATHER_API_KEY } from '../api';
 
 const useForecast = () => {
     const BASE_URL = 'https://api.openweathermap.org';
     const REQUEST_URL = `${BASE_URL}`;
-    const API_KEY = '85dbbe2b9cff4e8b40524cdb7ec8884b';
+    const API_KEY = OPEN_WEATHER_API_KEY;
 
     const [isError, setError] = useState(false);
     const [isLoading, setLoading] = useState(false);
